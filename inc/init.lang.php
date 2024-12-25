@@ -9,7 +9,7 @@ class lang implements ArrayAccess {
     public function __construct() {
 		$sellang = $_GET['lang'] ?? $_COOKIE['lang'] ?? 'ua';
 		if (!in_array($sellang, $this->languages)) {
-			$sellang = 'ua';
+			$sellang = 'ru';
 		}
 		setcookie('lang', $sellang, time() + (86400 * 30), "/");
         require ENGINE_DIR.'/lang/'.$sellang.'.php';
